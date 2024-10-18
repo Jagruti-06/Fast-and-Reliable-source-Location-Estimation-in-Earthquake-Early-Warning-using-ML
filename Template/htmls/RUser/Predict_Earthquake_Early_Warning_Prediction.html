@@ -1,0 +1,165 @@
+{% extends 'RUser/Header.html' %}
+{% block userblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 904px;
+    height: 202px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style4 {color: #FFFF00; font-weight: bold; }
+.style7 {color: #FFFFFF}
+        .style9 {color: #FFFFFF; font-weight: bold; }
+        .style10 {font-size: 18px}
+        .style12 {
+	font-size: 24px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+
+                   <form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">PREDICTION OF EARTHQUAKE EARLY WARNING !!! </p>
+                            <hr>
+
+                                {% csrf_token %}
+                                <table width="989" align="center">
+                                  <tr>
+                                    <td height="44" colspan="4" bgcolor="#FF0000"><div align="center" class="style12">Enter Datasets Details Here !!! </div></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="289" height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter ewtime</div></td>
+                                    <td width="176"><input type="text" name="ewtime"></td>
+                                    <td width="364" bgcolor="#FF0000"><div align="center"><span class="style4">Enter latitude</span></div></td>
+                                    <td width="273"><input type="text" name="latitude"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter longitude</div></td>
+                                    <td><input type="text" name="longitude"></td>
+                                    <td bgcolor="#FF0000"><div align="center"><span class="style4">Enter depth</span></div></td>
+                                    <td><input type="text" name="depth"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter mag</div></td>
+                                    <td><input type="text" name="mag"></td>
+                                    <td bgcolor="#FF0000"><div align="center"><span class="style4">Enter magType</span></div></td>
+                                    <td><input type="text" name="magType"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter nst</div></td>
+                                    <td><input type="text" name="nst"></td>
+                                    <td bgcolor="#FF0000"><div align="center"><span class="style4">Enter gap</span></div></td>
+                                    <td><input type="text" name="gap"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter dmin </div></td>
+                                    <td><input type="text" name="dmin"></td>
+                                    <td bgcolor="#FF0000"><div align="center"><span class="style4">Enter rms</span></div></td>
+                                    <td><input type="text" name="rms"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Enter net</div>
+                                    </div></td>
+                                    <td><input type="text" name="net"></td>
+                                    <td bgcolor="#FF0000"><div align="center"><span class="style4">Enter idn</span></div></td>
+                                    <td><input type="text" name="idn"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Enter updated Time </div>
+                                    </div></td>
+                                    <td><input type="text" name="updated"></td>
+                                    <td bgcolor="#FF0000"><div align="center"><span class="style4">Enter place</span></div></td>
+                                    <td><textarea name="place" cols="25" rows="3"></textarea></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter horizontalError</div></td>
+                                    <td><input type="text" name="horizontalError"></td>
+                                    <td bgcolor="#FF0000"><div align="center"><span class="style4">Enter depthError</span></div></td>
+                                    <td><input type="text" name="depthError"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4"><span class="style2">Enter </span>magError</div></td>
+                                    <td><input type="text" name="magError"></td>
+                                    <td bgcolor="#FF0000"><div align="center"><span class="style4">Enter magNst</span></div></td>
+                                    <td><input type="text" name="magNst"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FFFFFF">&nbsp;</td>
+                                    <td><input name="submit" type="submit" class="style1" value="Predict"></td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                  </tr>
+                                </table>
+					 </fieldset>
+				  </form>
+
+
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+
+                            <hr>
+                            <div>
+                              <table width="769" height="61" border="0" align="center" >
+                                    <tr><td width="425" bgcolor="#FF0000"><div align="center" class="style10"><span class="text-uppercase pull-center style1 style7">Prediction Of Earthquake Early Warning</span> <span class="style9">::</span> </div></td>
+
+
+
+                                      <td width="265" bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{objs}}</div></td></tr>
+                      </table>
+
+
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>

@@ -1,0 +1,123 @@
+{% extends 'SProvider/Header.html' %}
+{% block researchblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 1104px;
+    height: 442px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style12 {color: #FFFF00; font-weight: bold; }
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">View Earthquake Early Warning Prediction Type Details  !!! </p>
+                            <hr>
+                            <div class="tweettext">
+                               <table border="5" bordercolor="#FF00FF">
+
+
+                                   <tr>
+
+                                       <td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">ewtime</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">latitude</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">longitude</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">depth</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">mag</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">magType</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">nst</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">gap</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">dmin</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">rms</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">net</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">idn</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">updated</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">place</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">horizontalError</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">depthError</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">magError</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">magNst</span></div></td>
+<td bgcolor="#FF0000"><div align="center" class="style12"><span class="style8 style6">Prediction</span></div></td>
+
+
+
+
+                      </tr>
+                            {% for object in list_objects %}
+                      <tr>
+                          <td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.ewtime}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.latitude}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.longitude}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.depth}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.mag}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.magType}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.nst}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.gap}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.dmin}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.rms}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.net}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.idn}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.updated}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.place}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.horizontalError}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.depthError}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.magError}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.magNst}}</td>
+<td bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" >{{object.Prediction}}</td>
+
+
+                        </tr>
+
+                                        {% endfor %}
+                      </table>
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
